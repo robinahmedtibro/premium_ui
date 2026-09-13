@@ -13,4 +13,6 @@ node_modules/
 *~
 .vscode/
 .idea/
+.venv/
+uv.lock
 

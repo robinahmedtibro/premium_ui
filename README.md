@@ -45,7 +45,7 @@ premium_ui/
 ├── premium_ui/
 │   ├── __init__.py              # Version declaration (0.1.0)
 │   ├── hooks.py                 # Asset hooks for Desk (CSS & JS)
-│   ├── modules.txt              # Frappe module registration
+│   ├── modules.txt              # Empty manifest (pure UI customization, no DocTypes)
 │   ├── patches.txt              # Standard patch manifest
 │   ├── api/
 │   │   ├── __init__.py
