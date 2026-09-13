@@ -1,18 +1,18 @@
 [build-system]
-requires = ["flit_core >=3.4,<4"]
-build-backend = "flit_core.buildapi"
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "premium_ui"
+version = "0.1.0"
+description = "A modern, premium SaaS-style interface for Frappe Framework and ERPNext v15"
 authors = [
     { name = "Codenexora", email = "info@codenexora.xyz" }
 ]
-description = "A modern, premium SaaS-style interface for Frappe Framework and ERPNext v15"
-requires-python = ">=3.10"
 readme = "README.md"
-dynamic = ["version"]
+requires-python = ">=3.10"
+license = { text = "MIT" }
 dependencies = []
-license = { file = "license.txt" }
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Framework :: Frappe",
@@ -27,5 +27,20 @@ classifiers = [
 
 [project.urls]
 Homepage = "https://codenexora.xyz"
-Repository = "https://github.com/codenexora/premium_ui"
+Repository = "https://github.com/robinahmedtibro/premium_ui"
 
+[tool.setuptools]
+include-package-data = true
+zip-safe = false
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["premium_ui*"]
+namespaces = false
+
+[tool.setuptools.package-data]
+premium_ui = [
+    "*.txt",
+    "public/**/*",
+    "api/**/*"
+]

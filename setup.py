@@ -7,7 +7,14 @@ setup(
     author="Codenexora",
     author_email="info@codenexora.xyz",
     packages=find_packages(include=["premium_ui", "premium_ui.*"]),
-    zip_safe=False,
     include_package_data=True,
+    package_data={
+        "premium_ui": [
+            "*.txt",
+            "public/**/*",
+            "api/**/*",
+        ],
+    },
+    zip_safe=False,
     install_requires=[],
 )
