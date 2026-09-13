@@ -1,0 +1,31 @@
+[build-system]
+requires = ["flit_core >=3.4,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "premium_ui"
+authors = [
+    { name = "Codenexora", email = "info@codenexora.xyz" }
+]
+description = "A modern, premium SaaS-style interface for Frappe Framework and ERPNext v15"
+requires-python = ">=3.10"
+readme = "README.md"
+dynamic = ["version"]
+dependencies = []
+license = { file = "license.txt" }
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Framework :: Frappe",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Software Development :: User Interfaces"
+]
+
+[project.urls]
+Homepage = "https://codenexora.xyz"
+Repository = "https://github.com/codenexora/premium_ui"
+

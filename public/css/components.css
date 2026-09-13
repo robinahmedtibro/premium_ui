@@ -1,0 +1,443 @@
+/**
+ * Premium UI - Components Stylesheet
+ * Buttons, Inputs, Tables, Forms, Modals, Status Badges, Lists
+ * Target: Frappe Framework & ERPNext v15
+ * Author: Codenexora
+ * License: MIT
+ */
+
+/* ==========================================================================
+   Button System
+   ========================================================================== */
+.btn {
+  font-family: var(--pui-font-family) !important;
+  font-size: 13.5px !important;
+  font-weight: 500 !important;
+  border-radius: var(--pui-radius-sm) !important;
+  padding: 7px 14px !important;
+  line-height: 1.4 !important;
+  transition: all var(--pui-transition-fast) !important;
+  border: 1px solid transparent !important;
+  box-shadow: var(--pui-shadow-xs) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+}
+
+.btn:focus,
+.btn:focus-visible {
+  outline: none !important;
+  box-shadow: 0 0 0 3px var(--pui-primary-focus) !important;
+}
+
+/* Primary Button */
+.btn-primary,
+.btn.btn-primary {
+  background-color: var(--pui-primary) !important;
+  border-color: var(--pui-primary) !important;
+  color: #FFFFFF !important;
+}
+
+.btn-primary:hover,
+.btn.btn-primary:hover {
+  background-color: var(--pui-primary-dark) !important;
+  border-color: var(--pui-primary-dark) !important;
+  color: #FFFFFF !important;
+  box-shadow: var(--pui-shadow-sm) !important;
+  transform: translateY(-0.5px);
+}
+
+.btn-primary:active,
+.btn.btn-primary:active {
+  transform: translateY(0);
+  background-color: var(--pui-primary-dark) !important;
+}
+
+/* Secondary / Default Button */
+.btn-default,
+.btn-secondary,
+.btn.btn-default,
+.btn.btn-secondary {
+  background-color: var(--pui-surface) !important;
+  border-color: var(--pui-border) !important;
+  color: var(--pui-text) !important;
+}
+
+.btn-default:hover,
+.btn-secondary:hover,
+.btn.btn-default:hover,
+.btn.btn-secondary:hover {
+  background-color: var(--pui-surface-hover) !important;
+  border-color: var(--pui-border-strong) !important;
+  color: var(--pui-text) !important;
+}
+
+/* Danger Button */
+.btn-danger,
+.btn.btn-danger {
+  background-color: var(--pui-danger) !important;
+  border-color: var(--pui-danger) !important;
+  color: #FFFFFF !important;
+}
+
+.btn-danger:hover,
+.btn.btn-danger:hover {
+  background-color: #B91C1C !important;
+  border-color: #B91C1C !important;
+}
+
+/* Success Button */
+.btn-success,
+.btn.btn-success {
+  background-color: var(--pui-success) !important;
+  border-color: var(--pui-success) !important;
+  color: #FFFFFF !important;
+}
+
+.btn-success:hover,
+.btn.btn-success:hover {
+  background-color: #15803D !important;
+  border-color: #15803D !important;
+}
+
+/* Small Buttons */
+.btn-xs,
+.btn-sm {
+  font-size: 12.5px !important;
+  padding: 5px 10px !important;
+  border-radius: var(--pui-radius-sm) !important;
+}
+
+/* ==========================================================================
+   Form Controls & Inputs
+   ========================================================================== */
+.form-control,
+input[type="text"].form-control,
+input[type="password"].form-control,
+input[type="email"].form-control,
+input[type="number"].form-control,
+select.form-control,
+textarea.form-control {
+  background-color: var(--pui-surface) !important;
+  border: 1px solid var(--pui-border) !important;
+  border-radius: var(--pui-radius-sm) !important;
+  color: var(--pui-text) !important;
+  font-size: 13.5px !important;
+  height: 36px;
+  padding: 7px 12px !important;
+  transition: all var(--pui-transition-fast) !important;
+  box-shadow: var(--pui-shadow-xs) !important;
+}
+
+textarea.form-control {
+  height: auto;
+  min-height: 80px;
+}
+
+.form-control:focus,
+input:focus.form-control,
+select:focus.form-control,
+textarea:focus.form-control {
+  border-color: var(--pui-primary) !important;
+  box-shadow: 0 0 0 3px var(--pui-primary-focus) !important;
+  outline: none !important;
+}
+
+.form-control::placeholder {
+  color: var(--pui-text-muted) !important;
+}
+
+.form-control:disabled,
+.form-control[readonly] {
+  background-color: var(--pui-bg) !important;
+  color: var(--pui-text-secondary) !important;
+  border-color: var(--pui-border) !important;
+  cursor: not-allowed;
+}
+
+/* Control Labels & Required Indicators */
+.control-label {
+  color: var(--pui-text-secondary) !important;
+  font-size: 12.5px !important;
+  font-weight: 500 !important;
+  margin-bottom: 5px !important;
+  letter-spacing: 0.01em;
+}
+
+.reqd {
+  color: var(--pui-danger) !important;
+  margin-left: 2px;
+  font-weight: 700;
+}
+
+/* Checkbox & Radio Controls */
+input[type="checkbox"],
+.input-area input[type="checkbox"] {
+  accent-color: var(--pui-primary) !important;
+  border-radius: 4px !important;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   Form Layout, Sections & Child Tables
+   ========================================================================== */
+.form-layout {
+  background-color: var(--pui-surface) !important;
+  border-radius: var(--pui-radius-md) !important;
+  border: 1px solid var(--pui-border) !important;
+  box-shadow: var(--pui-shadow-card) !important;
+  padding: 24px !important;
+  margin-bottom: 24px;
+}
+
+.form-section {
+  border-bottom: 1px solid var(--pui-border-light) !important;
+  padding: 20px 0 !important;
+}
+
+.form-section:last-child {
+  border-bottom: none !important;
+}
+
+.section-head {
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  color: var(--pui-text) !important;
+  margin-bottom: 16px !important;
+  letter-spacing: -0.01em;
+}
+
+/* Tabs */
+.form-tabs .nav-tabs,
+.nav-tabs {
+  border-bottom: 1px solid var(--pui-border) !important;
+  gap: 8px;
+}
+
+.nav-tabs .nav-link {
+  color: var(--pui-text-secondary) !important;
+  font-weight: 500 !important;
+  font-size: 13.5px !important;
+  border: none !important;
+  border-bottom: 2px solid transparent !important;
+  padding: 10px 16px !important;
+  border-radius: 0 !important;
+  transition: all var(--pui-transition-fast) !important;
+}
+
+.nav-tabs .nav-link:hover {
+  color: var(--pui-text) !important;
+  border-bottom-color: var(--pui-border-strong) !important;
+}
+
+.nav-tabs .nav-link.active {
+  color: var(--pui-primary) !important;
+  border-bottom-color: var(--pui-primary) !important;
+  background-color: transparent !important;
+  font-weight: 600 !important;
+}
+
+/* Child Tables (Form Grid) */
+.form-grid {
+  border: 1px solid var(--pui-border) !important;
+  border-radius: var(--pui-radius-sm) !important;
+  overflow: hidden;
+  box-shadow: var(--pui-shadow-xs) !important;
+}
+
+.form-grid .grid-heading-row {
+  background-color: var(--pui-bg) !important;
+  font-weight: 600 !important;
+  font-size: 12.5px !important;
+  color: var(--pui-text-secondary) !important;
+  border-bottom: 1px solid var(--pui-border) !important;
+}
+
+.form-grid .grid-row {
+  border-bottom: 1px solid var(--pui-border-light) !important;
+  transition: background-color var(--pui-transition-fast) !important;
+}
+
+.form-grid .grid-row:hover {
+  background-color: var(--pui-surface-hover) !important;
+}
+
+/* ==========================================================================
+   List Views & Tables
+   ========================================================================== */
+.frappe-list .result {
+  border: 1px solid var(--pui-border) !important;
+  border-radius: var(--pui-radius-md) !important;
+  background-color: var(--pui-surface) !important;
+  box-shadow: var(--pui-shadow-card) !important;
+  overflow: hidden;
+}
+
+.list-row-head {
+  background-color: var(--pui-bg) !important;
+  border-bottom: 1px solid var(--pui-border) !important;
+  padding: 12px 18px !important;
+  font-weight: 600 !important;
+  font-size: 12.5px !important;
+  color: var(--pui-text-secondary) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.list-row {
+  padding: 12px 18px !important;
+  border-bottom: 1px solid var(--pui-border-light) !important;
+  transition: all var(--pui-transition-fast) !important;
+}
+
+.list-row:last-child {
+  border-bottom: none !important;
+}
+
+.list-row:hover {
+  background-color: var(--pui-surface-hover) !important;
+  cursor: pointer;
+}
+
+.list-row .level-item {
+  color: var(--pui-text) !important;
+  font-size: 13.5px !important;
+}
+
+/* Pagination & Filters */
+.list-paging-area {
+  padding: 12px 18px !important;
+  border-top: 1px solid var(--pui-border) !important;
+  background-color: var(--pui-surface) !important;
+}
+
+.filter-button,
+.sort-selector {
+  border-radius: var(--pui-radius-sm) !important;
+  border: 1px solid var(--pui-border) !important;
+}
+
+/* ==========================================================================
+   Status Indicators & Semantic Badges
+   ========================================================================== */
+.indicator-pill,
+.indicator {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  padding: 4px 10px !important;
+  border-radius: var(--pui-radius-pill) !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.01em;
+  line-height: 1.2 !important;
+}
+
+/* Green: Paid / Submitted / Completed / Active */
+.indicator-pill.green,
+.indicator.green,
+[data-status="Paid"],
+[data-status="Submitted"],
+[data-status="Completed"] {
+  background-color: var(--pui-success-light) !important;
+  color: var(--pui-success) !important;
+  border: 1px solid var(--pui-success-border) !important;
+}
+
+/* Red: Overdue / Cancelled / Rejected */
+.indicator-pill.red,
+.indicator.red,
+[data-status="Cancelled"],
+[data-status="Overdue"] {
+  background-color: var(--pui-danger-light) !important;
+  color: var(--pui-danger) !important;
+  border: 1px solid var(--pui-danger-border) !important;
+}
+
+/* Amber: Pending / Draft / Unpaid */
+.indicator-pill.orange,
+.indicator-pill.yellow,
+.indicator.orange,
+.indicator.yellow,
+[data-status="Draft"],
+[data-status="Pending"] {
+  background-color: var(--pui-warning-light) !important;
+  color: #B45309 !important;
+  border: 1px solid var(--pui-warning-border) !important;
+}
+
+/* Blue: Info / Open */
+.indicator-pill.blue,
+.indicator.blue {
+  background-color: var(--pui-info-light) !important;
+  color: var(--pui-info) !important;
+  border: 1px solid var(--pui-info-border) !important;
+}
+
+/* ==========================================================================
+   Modals & Dialogs
+   ========================================================================== */
+.modal-content {
+  background-color: var(--pui-surface) !important;
+  border-radius: var(--pui-radius-lg) !important;
+  border: 1px solid var(--pui-border) !important;
+  box-shadow: var(--pui-shadow-lg) !important;
+  overflow: hidden;
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--pui-border) !important;
+  padding: 16px 22px !important;
+}
+
+.modal-title {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: var(--pui-text) !important;
+}
+
+.modal-body {
+  padding: 22px !important;
+}
+
+.modal-footer {
+  border-top: 1px solid var(--pui-border) !important;
+  padding: 14px 22px !important;
+  background-color: var(--pui-bg) !important;
+}
+
+.modal-backdrop.show {
+  opacity: 0.45 !important;
+  backdrop-filter: blur(4px);
+}
+
+/* ==========================================================================
+   Breadcrumbs & Empty States
+   ========================================================================== */
+.breadcrumb {
+  background: transparent !important;
+  padding: 0 !important;
+  margin-bottom: 8px !important;
+  font-size: 12.5px !important;
+}
+
+.breadcrumb a {
+  color: var(--pui-text-secondary) !important;
+  text-decoration: none !important;
+  transition: color var(--pui-transition-fast);
+}
+
+.breadcrumb a:hover {
+  color: var(--pui-primary) !important;
+}
+
+.no-result,
+.empty-state {
+  text-align: center;
+  padding: 48px 24px !important;
+  color: var(--pui-text-secondary) !important;
+}
+

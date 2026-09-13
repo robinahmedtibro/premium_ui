@@ -1,0 +1,110 @@
+/**
+ * Premium UI - Responsive Stylesheet
+ * Media Queries for Mobile, Tablet, and Desktop Devices
+ * Target: Frappe Framework & ERPNext v15
+ * Author: Codenexora
+ * License: MIT
+ */
+
+/* ==========================================================================
+   Tablet Breakpoints (max-width: 1024px)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .pui-kpi-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 14px !important;
+  }
+
+  .pui-quick-actions-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  .pui-recent-activity-container {
+    grid-template-columns: 1fr !important;
+  }
+
+  .form-layout {
+    padding: 18px !important;
+  }
+}
+
+/* ==========================================================================
+   Mobile Breakpoints (max-width: 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .page-head {
+    padding: 10px 16px !important;
+  }
+
+  .pui-dashboard-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+
+  .pui-header-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .pui-kpi-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .pui-kpi-card {
+    padding: 16px !important;
+  }
+
+  .pui-kpi-value {
+    font-size: 22px !important;
+  }
+
+  .pui-quick-actions-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  /* List & Table responsiveness */
+  .frappe-list .result {
+    border-radius: var(--pui-radius-sm) !important;
+    overflow-x: auto !important;
+  }
+
+  .list-row {
+    padding: 10px 14px !important;
+  }
+
+  /* Navbar Adjustments */
+  .navbar {
+    padding: 0 12px !important;
+  }
+
+  .navbar .search-bar {
+    width: 140px !important;
+  }
+
+  /* Touch Target Ergonomics */
+  .btn,
+  .form-control {
+    height: 38px !important;
+  }
+}
+
+/* ==========================================================================
+   Small Mobile Devices (max-width: 480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+  .pui-greeting-title {
+    font-size: 19px !important;
+  }
+
+  .pui-quick-actions-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .modal-content {
+    border-radius: var(--pui-radius-md) !important;
+  }
+}
+

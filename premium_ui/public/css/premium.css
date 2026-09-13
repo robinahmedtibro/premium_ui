@@ -1,0 +1,324 @@
+/**
+ * Premium UI - Core Stylesheet & Design Tokens
+ * Target: Frappe Framework & ERPNext v15
+ * Author: Codenexora
+ * License: MIT
+ */
+
+:root {
+  /* Primary & Accents */
+  --pui-primary: #2563EB;
+  --pui-primary-dark: #1D4ED8;
+  --pui-primary-light: #EAF1FF;
+  --pui-primary-subtle: rgba(37, 99, 235, 0.08);
+  --pui-primary-focus: rgba(37, 99, 235, 0.18);
+
+  /* Neutrals & Surfaces */
+  --pui-bg: #F5F7FB;
+  --pui-surface: #FFFFFF;
+  --pui-surface-hover: #F8FAFC;
+  --pui-surface-active: #F1F5F9;
+
+  /* Typography */
+  --pui-text: #172033;
+  --pui-text-secondary: #667085;
+  --pui-text-muted: #94A3B8;
+  --pui-font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* Borders & Dividers */
+  --pui-border: #E7EBF2;
+  --pui-border-light: #F1F4F9;
+  --pui-border-strong: #D0D7E2;
+
+  /* Semantic Feedback */
+  --pui-success: #16A34A;
+  --pui-success-light: #DCFCE7;
+  --pui-success-border: #BBF7D0;
+  --pui-warning: #F59E0B;
+  --pui-warning-light: #FEF3C7;
+  --pui-warning-border: #FDE68A;
+  --pui-danger: #DC2626;
+  --pui-danger-light: #FEE2E2;
+  --pui-danger-border: #FECACA;
+  --pui-info: #0EA5E9;
+  --pui-info-light: #E0F2FE;
+  --pui-info-border: #BAE6FD;
+
+  /* Radii */
+  --pui-radius-sm: 8px;
+  --pui-radius-md: 12px;
+  --pui-radius-lg: 16px;
+  --pui-radius-pill: 9999px;
+
+  /* Soft Layered Shadows */
+  --pui-shadow-xs: 0 1px 2px rgba(16, 24, 40, 0.04);
+  --pui-shadow-sm: 0 1px 3px rgba(16, 24, 40, 0.08), 0 1px 2px rgba(16, 24, 40, 0.04);
+  --pui-shadow-md: 0 4px 12px -2px rgba(16, 24, 40, 0.08), 0 2px 6px -2px rgba(16, 24, 40, 0.04);
+  --pui-shadow-lg: 0 12px 24px -4px rgba(16, 24, 40, 0.08), 0 4px 8px -2px rgba(16, 24, 40, 0.03);
+  --pui-shadow-card: 0 2px 8px rgba(16, 24, 40, 0.04), 0 1px 2px rgba(16, 24, 40, 0.02);
+
+  /* Motion */
+  --pui-transition-fast: 150ms ease-out;
+  --pui-transition-normal: 220ms ease-out;
+}
+
+/* ==========================================================================
+   Dark Mode Support (Frappe v15 [data-theme="dark"])
+   ========================================================================== */
+[data-theme="dark"],
+html[data-theme="dark"],
+body[data-theme="dark"] {
+  --pui-bg: #0F172A;
+  --pui-surface: #111827;
+  --pui-surface-hover: #1E293B;
+  --pui-surface-active: #334155;
+
+  --pui-text: #F8FAFC;
+  --pui-text-secondary: #94A3B8;
+  --pui-text-muted: #64748B;
+
+  --pui-border: #1E293B;
+  --pui-border-light: #334155;
+  --pui-border-strong: #475569;
+
+  --pui-primary: #3B82F6;
+  --pui-primary-dark: #2563EB;
+  --pui-primary-light: rgba(59, 130, 246, 0.15);
+  --pui-primary-subtle: rgba(59, 130, 246, 0.10);
+  --pui-primary-focus: rgba(59, 130, 246, 0.25);
+
+  --pui-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --pui-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.2);
+  --pui-shadow-md: 0 4px 12px -2px rgba(0, 0, 0, 0.5);
+  --pui-shadow-lg: 0 12px 24px -4px rgba(0, 0, 0, 0.6);
+  --pui-shadow-card: 0 2px 8px rgba(0, 0, 0, 0.35);
+
+  --pui-success-light: rgba(22, 163, 74, 0.2);
+  --pui-warning-light: rgba(245, 158, 11, 0.2);
+  --pui-danger-light: rgba(220, 38, 38, 0.2);
+  --pui-info-light: rgba(14, 165, 233, 0.2);
+}
+
+/* ==========================================================================
+   Global Base & Layout Resets
+   ========================================================================== */
+body {
+  font-family: var(--pui-font-family);
+  background-color: var(--pui-bg) !important;
+  color: var(--pui-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+}
+
+/* Main Workspace / Desk Canvas */
+.page-container,
+.main-section,
+.layout-main-section-wrapper {
+  background-color: var(--pui-bg) !important;
+}
+
+.page-head {
+  background-color: var(--pui-surface) !important;
+  border-bottom: 1px solid var(--pui-border) !important;
+  box-shadow: var(--pui-shadow-xs) !important;
+  padding: 12px 24px !important;
+}
+
+.page-title .title-text {
+  font-weight: 600 !important;
+  color: var(--pui-text) !important;
+  letter-spacing: -0.015em !important;
+}
+
+/* ==========================================================================
+   Modern Navbar
+   ========================================================================== */
+.navbar,
+header.navbar,
+.navbar-default {
+  background-color: var(--pui-surface) !important;
+  border-bottom: 1px solid var(--pui-border) !important;
+  box-shadow: var(--pui-shadow-xs) !important;
+  height: 56px !important;
+  padding: 0 20px !important;
+  transition: background-color var(--pui-transition-normal), border-color var(--pui-transition-normal);
+  z-index: 1020;
+}
+
+/* App Logo in Navbar */
+.navbar-brand .app-logo {
+  height: 28px !important;
+  transition: transform var(--pui-transition-fast);
+}
+
+.navbar-brand:hover .app-logo {
+  transform: scale(1.02);
+}
+
+/* Modern Search Bar */
+.search-bar,
+.navbar .search-bar,
+.navbar .form-control.input-search {
+  background-color: var(--pui-bg) !important;
+  border: 1px solid var(--pui-border) !important;
+  border-radius: var(--pui-radius-sm) !important;
+  color: var(--pui-text) !important;
+  font-size: 13.5px !important;
+  padding: 6px 14px 6px 36px !important;
+  transition: all var(--pui-transition-fast);
+  box-shadow: none !important;
+}
+
+.search-bar:focus,
+.navbar .search-bar:focus,
+.navbar .form-control.input-search:focus {
+  background-color: var(--pui-surface) !important;
+  border-color: var(--pui-primary) !important;
+  box-shadow: 0 0 0 3px var(--pui-primary-focus) !important;
+}
+
+/* Notifications & Action Icons */
+.navbar-nav .nav-link,
+.navbar-nav .btn-link {
+  color: var(--pui-text-secondary) !important;
+  border-radius: var(--pui-radius-sm) !important;
+  padding: 8px 10px !important;
+  transition: all var(--pui-transition-fast);
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .btn-link:hover {
+  color: var(--pui-text) !important;
+  background-color: var(--pui-surface-hover) !important;
+}
+
+/* User Avatar & Dropdown */
+.navbar .avatar,
+.avatar-frame {
+  border-radius: var(--pui-radius-sm) !important;
+  border: 1.5px solid var(--pui-border) !important;
+  transition: border-color var(--pui-transition-fast);
+}
+
+.navbar .nav-item:hover .avatar {
+  border-color: var(--pui-primary) !important;
+}
+
+.navbar .dropdown-menu {
+  border-radius: var(--pui-radius-md) !important;
+  border: 1px solid var(--pui-border) !important;
+  box-shadow: var(--pui-shadow-lg) !important;
+  background-color: var(--pui-surface) !important;
+  padding: 6px !important;
+}
+
+.navbar .dropdown-menu .dropdown-item {
+  border-radius: var(--pui-radius-sm) !important;
+  font-size: 13.5px !important;
+  color: var(--pui-text) !important;
+  padding: 8px 12px !important;
+  transition: background-color var(--pui-transition-fast);
+}
+
+.navbar .dropdown-menu .dropdown-item:hover {
+  background-color: var(--pui-primary-light) !important;
+  color: var(--pui-primary) !important;
+}
+
+/* ==========================================================================
+   Modern Sidebar (Desk & Workspace Navigation)
+   ========================================================================== */
+.layout-side-section,
+.desk-sidebar,
+.workspace-sidebar {
+  background-color: var(--pui-surface) !important;
+  border-right: 1px solid var(--pui-border) !important;
+  padding: 16px 10px !important;
+  transition: all var(--pui-transition-normal);
+}
+
+.desk-sidebar .sidebar-items,
+.workspace-sidebar .sidebar-items {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* Sidebar Menu Items */
+.desk-sidebar .sidebar-item,
+.workspace-sidebar .sidebar-item,
+.desk-sidebar .standard-sidebar-item {
+  margin-bottom: 3px !important;
+}
+
+.desk-sidebar .sidebar-item a,
+.workspace-sidebar .sidebar-item a,
+.desk-sidebar .standard-sidebar-item a,
+.desk-sidebar .item-anchor {
+  display: flex !important;
+  align-items: center !important;
+  padding: 9px 12px !important;
+  color: var(--pui-text-secondary) !important;
+  font-size: 13.5px !important;
+  font-weight: 500 !important;
+  border-radius: var(--pui-radius-sm) !important;
+  transition: all var(--pui-transition-fast) !important;
+  text-decoration: none !important;
+  position: relative !important;
+}
+
+/* Hover State */
+.desk-sidebar .sidebar-item a:hover,
+.workspace-sidebar .sidebar-item a:hover,
+.desk-sidebar .standard-sidebar-item a:hover,
+.desk-sidebar .item-anchor:hover {
+  background-color: var(--pui-surface-hover) !important;
+  color: var(--pui-text) !important;
+}
+
+/* Active Menu Item */
+.desk-sidebar .sidebar-item.selected a,
+.workspace-sidebar .sidebar-item.selected a,
+.desk-sidebar .standard-sidebar-item.selected a,
+.desk-sidebar .item-anchor.active,
+.desk-sidebar .sidebar-item.active a {
+  background-color: var(--pui-primary-light) !important;
+  color: var(--pui-primary) !important;
+  font-weight: 600 !important;
+}
+
+/* Accent Indicator Bar on Active */
+.desk-sidebar .sidebar-item.selected a::before,
+.workspace-sidebar .sidebar-item.selected a::before,
+.desk-sidebar .item-anchor.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  bottom: 6px;
+  width: 3.5px;
+  border-radius: 0 4px 4px 0;
+  background-color: var(--pui-primary);
+}
+
+.desk-sidebar .sidebar-item .sidebar-item-icon,
+.workspace-sidebar .sidebar-item .sidebar-item-icon {
+  margin-right: 10px !important;
+  color: inherit !important;
+}
+
+/* ==========================================================================
+   Motion Accessibility
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+

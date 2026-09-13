@@ -1,0 +1,396 @@
+/**
+ * Premium UI - Dashboard & Workspace Stylesheet
+ * Header Greeting, KPI Cards, Quick Actions, Transactions, Native Workspace Widgets
+ * Target: Frappe Framework & ERPNext v15
+ * Author: Codenexora
+ * License: MIT
+ */
+
+/* ==========================================================================
+   Dashboard Container & Header
+   ========================================================================== */
+.pui-dashboard-container {
+  margin-bottom: 28px;
+  animation: puiFadeIn 250ms ease-out;
+}
+
+@keyframes puiFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pui-dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding: 4px 2px;
+}
+
+.pui-greeting-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--pui-text);
+  letter-spacing: -0.02em;
+  margin: 0 0 4px 0;
+}
+
+.pui-greeting-subtitle {
+  font-size: 13.5px;
+  color: var(--pui-text-secondary);
+  margin: 0;
+}
+
+.pui-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pui-company-badge {
+  background-color: var(--pui-surface);
+  border: 1px solid var(--pui-border);
+  border-radius: var(--pui-radius-pill);
+  padding: 5px 12px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--pui-text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: var(--pui-shadow-xs);
+}
+
+.pui-refresh-btn {
+  background-color: var(--pui-surface);
+  border: 1px solid var(--pui-border);
+  border-radius: var(--pui-radius-sm);
+  color: var(--pui-text-secondary);
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: all var(--pui-transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pui-refresh-btn:hover {
+  background-color: var(--pui-surface-hover);
+  color: var(--pui-primary);
+  border-color: var(--pui-border-strong);
+}
+
+/* ==========================================================================
+   KPI Cards Grid (Primary & Secondary Rows)
+   ========================================================================== */
+.pui-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.pui-kpi-grid.pui-secondary-row {
+  margin-bottom: 24px;
+}
+
+.pui-kpi-card {
+  background-color: var(--pui-surface);
+  border: 1px solid var(--pui-border);
+  border-radius: var(--pui-radius-lg);
+  padding: 20px;
+  box-shadow: var(--pui-shadow-card);
+  transition: all var(--pui-transition-normal);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pui-kpi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--pui-shadow-hover);
+  border-color: var(--pui-border-strong);
+}
+
+.pui-kpi-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.pui-kpi-label {
+  font-size: 12.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--pui-text-secondary);
+  margin: 0;
+}
+
+.pui-kpi-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--pui-radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--pui-primary-light);
+  color: var(--pui-primary);
+}
+
+.pui-kpi-icon-wrap.sales {
+  background-color: #E0F2FE;
+  color: #0284C7;
+}
+
+.pui-kpi-icon-wrap.receivable {
+  background-color: #FEF3C7;
+  color: #D97706;
+}
+
+.pui-kpi-icon-wrap.payable {
+  background-color: #FEE2E2;
+  color: #DC2626;
+}
+
+.pui-kpi-icon-wrap.profit {
+  background-color: #DCFCE7;
+  color: #16A34A;
+}
+
+.pui-kpi-value {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--pui-text);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.pui-kpi-bottom {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--pui-text-secondary);
+}
+
+/* Trend Badges */
+.pui-trend-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: var(--pui-radius-pill);
+}
+
+.pui-trend-pill.up {
+  background-color: var(--pui-success-light);
+  color: var(--pui-success);
+}
+
+.pui-trend-pill.down {
+  background-color: var(--pui-danger-light);
+  color: var(--pui-danger);
+}
+
+.pui-trend-pill.neutral {
+  background-color: var(--pui-bg);
+  color: var(--pui-text-secondary);
+}
+
+/* ==========================================================================
+   Quick Actions Section
+   ========================================================================== */
+.pui-section-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--pui-text);
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pui-quick-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.pui-quick-action-btn {
+  background-color: var(--pui-surface);
+  border: 1px solid var(--pui-border);
+  border-radius: var(--pui-radius-md);
+  padding: 14px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none !important;
+  color: var(--pui-text) !important;
+  box-shadow: var(--pui-shadow-card);
+  transition: all var(--pui-transition-fast);
+  cursor: pointer;
+  text-align: center;
+}
+
+.pui-quick-action-btn:hover {
+  background-color: var(--pui-primary-light);
+  border-color: var(--pui-primary);
+  color: var(--pui-primary) !important;
+  transform: translateY(-1.5px);
+  box-shadow: var(--pui-shadow-sm);
+}
+
+.pui-quick-action-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.pui-quick-action-label {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* ==========================================================================
+   Recent Transactions Card
+   ========================================================================== */
+.pui-recent-activity-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.pui-activity-card {
+  background-color: var(--pui-surface);
+  border: 1px solid var(--pui-border);
+  border-radius: var(--pui-radius-lg);
+  padding: 18px;
+  box-shadow: var(--pui-shadow-card);
+}
+
+.pui-activity-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--pui-border-light);
+}
+
+.pui-activity-card-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--pui-text);
+  margin: 0;
+}
+
+.pui-activity-view-all {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--pui-primary);
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
+.pui-activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pui-activity-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border-radius: var(--pui-radius-sm);
+  transition: background-color var(--pui-transition-fast);
+  cursor: pointer;
+}
+
+.pui-activity-row:hover {
+  background-color: var(--pui-surface-hover);
+}
+
+.pui-activity-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pui-activity-id {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--pui-text);
+}
+
+.pui-activity-meta {
+  font-size: 11.5px;
+  color: var(--pui-text-secondary);
+}
+
+.pui-activity-value-wrap {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.pui-activity-amount {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--pui-text);
+}
+
+/* ==========================================================================
+   Frappe Native Workspace Widgets Polish
+   ========================================================================== */
+.widget,
+.widget.number-card-widget,
+.widget.quick-list-widget,
+.widget.shortcut-widget,
+.widget.chart-widget {
+  background-color: var(--pui-surface) !important;
+  border: 1px solid var(--pui-border) !important;
+  border-radius: var(--pui-radius-md) !important;
+  box-shadow: var(--pui-shadow-card) !important;
+  padding: 16px !important;
+  transition: all var(--pui-transition-normal) !important;
+}
+
+.widget:hover {
+  box-shadow: var(--pui-shadow-hover) !important;
+  border-color: var(--pui-border-strong) !important;
+}
+
+.widget .widget-head .widget-title {
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  color: var(--pui-text) !important;
+}
+
+.widget.number-card-widget .number {
+  color: var(--pui-text) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+}
+
